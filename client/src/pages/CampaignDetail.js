@@ -18,7 +18,7 @@ export default function CampaignDetail() {
 
   useEffect(() => {
     campaignsAPI.getById(id).then(res => setData(res.data)).catch(() => navigate('/campaigns')).finally(() => setLoading(false));
-  }, [id]);
+  }, [id, navigate]);
 
   const handleDonate = async (e) => {
     e.preventDefault();
@@ -135,7 +135,7 @@ export default function CampaignDetail() {
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 8, marginBottom: 16 }}>
                 {[10, 25, 50, 100].map(a => (
                   <button key={a} type="button" onClick={() => setDonateForm({ ...donateForm, amount: a })}
-                    style={{ padding: '10px', background: donateForm.amount == a ? 'var(--primary)' : 'var(--bg3)', border: `1.5px solid ${donateForm.amount == a ? 'var(--primary)' : 'var(--card-border)'}`, borderRadius: 8, color: 'var(--text)', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
+                    style={{ padding: '10px', background: Number(donateForm.amount) === a ? 'var(--primary)' : 'var(--bg3)', border: `1.5px solid ${Number(donateForm.amount) === a ? 'var(--primary)' : 'var(--card-border)'}`, borderRadius: 8, color: 'var(--text)', cursor: 'pointer', fontWeight: 600, fontSize: 14 }}>
                     ${a}
                   </button>
                 ))}

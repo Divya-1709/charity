@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import Sidebar from '../../components/Sidebar';
-import { adminAPI } from '../../api';
 import { campaignsAPI } from '../../api';
 import toast from 'react-hot-toast';
 import { FiPlus, FiX, FiEdit2 } from 'react-icons/fi';

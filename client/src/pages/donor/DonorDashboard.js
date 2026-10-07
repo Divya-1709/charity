@@ -2,14 +2,13 @@ import React, { useState, useEffect } from 'react';
 import Sidebar from '../../components/Sidebar';
 import { useAuth } from '../../AuthContext';
 import { donationsAPI } from '../../api';
-import { useNavigate, Link } from 'react-router-dom';
-import { FiHeart, FiDollarSign, FiList, FiArrowRight } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
+import { FiHeart, FiArrowRight } from 'react-icons/fi';
 
 export default function DonorDashboard() {
   const { user } = useAuth();
   const [donations, setDonations] = useState([]);
   const [loading, setLoading] = useState(true);
-  const navigate = useNavigate();
 
   useEffect(() => {
     donationsAPI.getMyDonations().then(res => setDonations(res.data || [])).catch(() => {}).finally(() => setLoading(false));

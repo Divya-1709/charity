@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import { campaignsAPI } from '../api';
-import { FiSearch, FiArrowRight } from 'react-icons/fi';
+import { FiSearch } from 'react-icons/fi';
 
 const CATEGORIES = ['All', 'Education', 'Medical', 'Food', 'Shelter', 'Environment', 'Emergency', 'Community'];
 const EMOJI_MAP = { education: '📚', medical: '🏥', food: '🍎', shelter: '🏠', environment: '🌱', emergency: '🆘', community: '🤝' };

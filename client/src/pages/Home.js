@@ -8,7 +8,6 @@ import {
   FiHeart,
   FiUsers,
   FiFlag,
-  FiTrendingUp,
   FiShield,
   FiStar,
   FiCheckCircle,
