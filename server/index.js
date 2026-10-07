@@ -30,8 +30,10 @@ app.use((err, req, res, next) => {
   res.status(500).json({ message: 'Internal server error.' });
 });
 
-app.listen(PORT, () => {
-  console.log(`🚀 HopeBridge server running on http://localhost:${PORT}`);
-});
+if (!process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`🚀 HopeBridge server running on http://localhost:${PORT}`);
+  });
+}
 
 module.exports = app;
